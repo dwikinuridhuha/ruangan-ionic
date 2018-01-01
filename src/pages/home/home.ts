@@ -13,6 +13,8 @@ export class HomePage {
     dataDariPython;
     test;
 
+    http = http.get("http://localhost:8000/");
+
   constructor(public navCtrl: NavController,
               public db: AngularFireDatabase) {
         // this.dataFirebase = this.db.list('/user').valueChanges().subscribe(data => {
