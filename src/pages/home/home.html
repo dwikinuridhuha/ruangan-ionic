@@ -12,8 +12,14 @@
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
 
-  <ion-item *ngFor="let post of posts">
-    {{post.id}}
-  </ion-item>
+  <ion-content>
+    <ion-list>
+      <ion-item-sliding *ngFor="let item of dataSource.source">
+        <ion-item>
+          {{item.id}} - {{item.masuk}} - {{item.keluar}}
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
 
 </ion-content>

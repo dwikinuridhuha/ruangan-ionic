@@ -2,20 +2,23 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Http } from "@angular/http";
 import 'rxjs/add/operator/map';
+import {Server} from "../../provider/server";
+import {DataSource} from "../../provider/datasource";
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+    providers: [Server]
 })
 export class HomePage {
 
-  posts: any;
+  items: any;
 
   constructor(public navCtrl: NavController,
-              public http: Http) {
-    this.http.get('http://localhost:8000/').map(res =>
-        res.json()).subscribe(data => {
-          this.posts = data.data.children;
+              public db: Server,
+              public dataSource: DataSource) {
+    this.db.getData().subscribe(data => {
+      this.dataSource.source = data.json();
     });
   }
 
