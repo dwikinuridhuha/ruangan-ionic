@@ -10,16 +10,16 @@
   The world is your oyster.
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+    <button (click)="tampil()">klik</button>
   </p>
 
-  <ion-content>
-    <ion-list>
-      <ion-item-sliding *ngFor="let item of dataSource.source">
-        <ion-item>
-          {{item.id}} - {{item.masuk}} - {{item.keluar}}
-        </ion-item>
-      </ion-item-sliding>
-    </ion-list>
-  </ion-content>
+  <ion-card>
+    <ion-card-header>
+      Bar Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
