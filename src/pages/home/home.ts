@@ -16,8 +16,10 @@ export class HomePage {
 
     @ViewChild('barCanvas') barCanvas;
 
-    items;
     barChart: any;
+
+    satu = 8;
+    dua = 3;
 
   constructor(public navCtrl: NavController,
               public db: Server,
@@ -27,19 +29,16 @@ export class HomePage {
     });
   }
 
-  tampil() {
-      alert(this.dataSource.source[0].masuk);
-  }
-
-    ionViewDidLoad() {
+  memasang() {
       this.barChart = new Chart(this.barCanvas.nativeElement, {
+          type: "bar",
           data: {
               labels: ["Red", "Blue"],
               datasets: [{
                   label: '# of Votes',
                   data: [
-                      5,
-                      2
+                      this.dataSource.source[0].masuk,
+                      this.dataSource.source[4].masuk
                   ],
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
@@ -53,15 +52,21 @@ export class HomePage {
               }]
           },
           options: {
-              scales: {
-                  yAxes: [{
-                      ticks: {
-                          beginAtZero: true
-                      }
-                  }]
+              title: {
+                  display: true,
+                  text: "Hello World",
+                  fontSize: 25
+              },
+              legend: {
+                  position: 'right'
               }
           }
       });
     }
 
+    tampil() {
+        alert(this.dataSource.source[0].masuk);
+        this.satu = this.dataSource.source[0].masuk;
+        this.dua = this.dataSource.source[4].masuk;
+    }
 }
