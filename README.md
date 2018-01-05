@@ -7,3 +7,7 @@ Ionic, chart.js
 # software yang di pakai
 IDE: phpStrom, notepad++, dll
 database koneksi: bantuan php dan local server
+
+# javascript & ionic version
+ionic 3
+ecmascript 2015
