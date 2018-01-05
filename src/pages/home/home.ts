@@ -6,9 +6,15 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  xAxis: any;
+  xValue: any;
 
   constructor(public navCtrl: NavController) {
 
+  }
+
+  kirim() {
+    alert(this.xAxis +" " +this.xValue);
   }
 
 }

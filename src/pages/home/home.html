@@ -11,4 +11,90 @@
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
+
+  <!--untuk seleksi x axsis-->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-list>
+          <ion-item>
+            <ion-label>X Axis</ion-label>
+            <ion-select [(ngModel)]="xAxis">
+              <ion-option value="tahun">Tahun</ion-option>
+              <ion-option value="bulan">Bulan</ion-option>
+              <ion-option value="minggu">Minggu</ion-option>
+              <ion-option value="hari">Hari</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-list>
+          <ion-item>
+            <ion-label>X value</ion-label>
+
+            <ion-select [(ngModel)]="xValue" *ngIf="xAxis == 'tahun'">
+              <ion-option value="Januari">Januari</ion-option>
+              <ion-option value="pebru">pebru</ion-option>
+              <ion-option value="maret">maret</ion-option>
+              <ion-option value="appr">appr</ion-option>
+            </ion-select>
+
+            <ion-select [(ngModel)]="xValue" *ngIf="xAxis == 'bulan'">
+              <ion-option value="1">1</ion-option>
+              <ion-option value="2">2</ion-option>
+              <ion-option value="3">3</ion-option>
+              <ion-option value="4">4</ion-option>
+            </ion-select>
+
+            <ion-select [(ngModel)]="xValue" *ngIf="xAxis == 'minggu'">
+              <ion-option value="minggu 1">minggu 1</ion-option>
+              <ion-option value="minggu 2">minggu 2</ion-option>
+              <ion-option value="minggu 3">minggu 3</ion-option>
+              <ion-option value="minggu 4">minggu 4</ion-option>
+            </ion-select>
+
+            <ion-select [(ngModel)]="xValue" *ngIf="xAxis == 'hari'">
+              <ion-option value="senin1">senin1</ion-option>
+              <ion-option value="senin2">senin2</ion-option>
+              <ion-option value="senin3">senin3</ion-option>
+              <ion-option value="senin4">senin4</ion-option>
+            </ion-select>
+
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <button ion-button full color="primary" (click)="kirim()">Send</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <canvas>
+    ini nanti buat chart
+  </canvas>
+
+  <!--untuk seleksi y axsis-->
+  <ion-list>
+    <ion-item>
+      <ion-label>Y Value</ion-label>
+      <ion-select [(ngModel)]="yValue" multiple="true">
+        <ion-option value="bacon" selected="true">Bacon</ion-option>
+        <ion-option value="olives">Black Olives</ion-option>
+        <ion-option value="xcheese" selected="true">Extra Cheese</ion-option>
+        <ion-option value="peppers">Green Peppers</ion-option>
+        <ion-option value="mushrooms">Mushrooms</ion-option>
+        <ion-option value="onions">Onions</ion-option>
+        <ion-option value="pepperoni">Pepperoni</ion-option>
+        <ion-option value="pineapple">Pineapple</ion-option>
+        <ion-option value="sausage">Sausage</ion-option>
+        <ion-option value="Spinach">Spinach</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
