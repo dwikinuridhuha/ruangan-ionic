@@ -8,6 +8,7 @@ Ionic, chart.js
 IDE: phpStrom, notepad++, dll
 database koneksi: bantuan php dan local server
 
-# javascript & ionic version
+# javascript, angular, & ionic version
 ionic 3
+angular 5
 ecmascript 2015
